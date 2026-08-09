@@ -27,3 +27,7 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
+        on:
+  push:
+    branches:
+      - feature/rg
