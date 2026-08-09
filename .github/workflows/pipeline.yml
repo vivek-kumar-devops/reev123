@@ -2,8 +2,8 @@ name: Terraform Plan
 
 on:
   pull_request:
-    branches:
-      - preprod
+   branches:
+  - main
 
   workflow_dispatch:
 
@@ -19,7 +19,8 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        run: terraform init
+      run: terraform plan
+    working-directory: environments/preprod
 
       - name: Terraform Validate
         run: terraform validate
