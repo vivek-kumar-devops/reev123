@@ -1,15 +1,14 @@
-name: Terraform Pipeline
+name: Terraform Plan
 
 on:
-  push:
-    branches:
-      - reeva123
   pull_request:
     branches:
       - preprod
 
+  workflow_dispatch:
+
 jobs:
-  terraform:
+  terraform-plan:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +26,3 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan
-        on:
-  push:
-    branches:
-      - feature/rg
